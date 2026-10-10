@@ -1,0 +1,98 @@
+body {
+    /* Monospace prevents layout text from shifting or wiggling every second */
+    font-family: 'Courier New', Courier, monospace; 
+    background: linear-gradient(135deg, #9ab7fa, #1100ff);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* CHANGED: Allows body to expand vertically if needed on small screens */
+    box-sizing: border-box;
+    padding: 20px;     /* ADDED: Prevents the card from touching the very edge of phone screens */
+}
+
+/* Glassmorphic card design layout */
+.clock-container {
+    background: rgba(21, 0, 50, 0.994);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px 60px; /* Base desktop padding */
+    border-radius: 24px;
+    border: 2px solid rgb(162, 162, 255);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 100%;        /* ADDED: Ensures it shrinks responsively */
+    max-width: 500px;   /* ADDED: Keeps the card from getting too wide on wide monitors */
+    box-sizing: border-box;
+}
+
+.date-display {
+    font-size: 1.1rem;
+    color: #1bff01;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.clock-display {
+    font-size: 4rem; /* Base desktop font size */
+    font-weight: bold;
+    color: #00b1fd; 
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap; /* ADDED: Keeps AM/PM wrapping perfectly if layout gets tight */
+}
+
+#ampm-text {
+    font-size: 1.8rem;
+    color: #f80029;
+    margin-left: 15px;
+    text-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+}
+
+#format-toggle {
+    background: transparent;
+    color: #001eff;
+    border: 2px solid #fe0303;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#format-toggle:hover {
+    background-color: #6a34ff;
+    color: #64ff56;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================================================
+   NEW RESPONSIVE MEDIA QUERIES (Fixes phone layout spacing and sizing)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    .clock-container {
+        padding: 30px 20px; /* Reduced padding so the container fits comfortably on narrow viewports */
+    }
+
+    .clock-display {
+        font-size: 2.5rem;   /* Scales down the giant text size so it doesn't break into awkward lines */
+        margin-bottom: 20px; /* Tighter margins for mobile screens */
+    }
+
+    #ampm-text {
+        font-size: 1.3rem;   /* Scales AM/PM text proportionally */
+        margin-left: 8px;    /* Tighter space between time digits and AM/PM label */
+    }
+    
+    .date-display {
+        font-size: 0.95rem;  /* Ensures date does not overflow container widths */
+        margin-bottom: 10px;
+    }
+}

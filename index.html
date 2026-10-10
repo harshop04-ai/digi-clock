@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Clock</title>
+    <!-- Links the external style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="clock-container">
+        <!-- Calendar date display panel -->
+        <div class="date-display" id="date-text">LOADING DATE...</div>
+        
+        <!-- Numerical clock display panel -->
+        <div class="clock-display">
+            <span id="time-text">00:00:00</span>
+            <span id="ampm-text"></span>
+        </div>
+        
+        <!-- Action toggle button -->
+        <button id="format-toggle">SWITCH TO 24-HOUR</button>
+    </div>
+
+    <!-- Links the external behavior script -->
+    <script src="script.js"></script>
+</body>
+</html>
